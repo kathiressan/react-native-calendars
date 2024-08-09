@@ -59,10 +59,9 @@ declare class ReservationList extends Component<ReservationListProps, State> {
         onRefresh: PropTypes.Requireable<(...args: any[]) => any>;
         reservationsKeyExtractor: PropTypes.Requireable<(...args: any[]) => any>;
         date: PropTypes.Requireable<any>;
-        item: PropTypes.Requireable<any>;
+        item: PropTypes.Requireable<any>; /** onScroll FlatList event */
         theme: PropTypes.Requireable<object>;
         rowHasChanged: PropTypes.Requireable<(...args: any[]) => any>;
-        /** Called when the user begins dragging the agenda list **/
         renderDay: PropTypes.Requireable<(...args: any[]) => any>;
         renderItem: PropTypes.Requireable<(...args: any[]) => any>;
         renderEmptyDate: PropTypes.Requireable<(...args: any[]) => any>;
