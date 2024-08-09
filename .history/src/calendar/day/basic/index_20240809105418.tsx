@@ -6,6 +6,7 @@ import {Theme, DayState, MarkingTypes, DateData} from '../../../types';
 import styleConstructor from './style';
 import Marking, {MarkingProps} from '../marking';
 
+
 export interface BasicDayProps extends ViewProps {
   state?: DayState;
   /** The marking object */
@@ -91,9 +92,9 @@ const BasicDay = (props: BasicDayProps) => {
         customStyles.container.borderRadius = 20;
       }
 
-      if (_marking.text === 'X') {
+      if (_marking.text === "X") {
         delete customStyles.container.backgroundColor;
-        customStyles.container.borderColor = 'black';
+        customStyles.container.borderColor = "black";
         customStyles.container.borderWidth = 1;
       }
       styles.push(customStyles.container);
@@ -163,31 +164,21 @@ const BasicDay = (props: BasicDayProps) => {
   };
 
   const renderContent = () => {
-    return (
-      <Fragment>
+    return (<Fragment>
         <View>
-          <View style={{alignItems: 'center'}}>
-            {renderText()}
-            {renderMarking()}
-          </View>
-          <View style={[getContainerStyle(), {alignItems: 'center', justifyContent: 'center'}]}>
-            {_marking.text ? (
-              <Text>{_marking.text}</Text>
-            ) : (
-              <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                <View style={{backgroundColor: 'red'}}>
-                  <Text>{_marking.text1}</Text>
-                </View>
-                <View>
-                  <Text>{_marking.text2}</Text>
-                </View>
-              </View>
-            )}
-          </View>
+            <View style={{alignItems: "center"}}>
+                {renderText()}
+                {renderMarking()}
+            </View>
+            <View style={[getContainerStyle(), { alignItems: "center", justifyContent: "center" }]}>
+                {_marking.text ? <Text>{_marking.text}</Text> : <View style={{alignItems: "center", justifyContent: "center"}}>
+                    <View style={{backgroundColor:"red"}}><Text>{_marking.text1}</Text></View>
+                    <View><Text>{_marking.text2}</Text></View>
+                </View>}
+            </View>
         </View>
-      </Fragment>
-    );
-  };
+  </Fragment>);
+};
 
   const renderContainer = () => {
     const {activeOpacity} = _marking;
